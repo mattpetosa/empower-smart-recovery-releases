@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-recovery-releases/releases) page.
 
+## v3.10.0.1-1.1.7 (2026-10-06)
+
+### Changed
+- **One download, no offline ISO.** The Waters restore scripts are now built into the app, and it puts them in C:\Client\DRScripts the first time it opens — so the single "Download App" file works on a server with no internet. A newer script synced from the server is never overwritten. The separate offline ISO is gone.
+
 ## v3.10.0.1-1.1.6 (2026-10-06)
 
 ### Changed
