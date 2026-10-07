@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-recovery-releases/releases) page.
 
+## v3.10.0.1-1.2.0 (2026-10-07)
+
+### Changed
+- **Downloads now need an activated copy.** Syncing files into C:\Client proves this copy's license to the server for each download session, without sending the license key. An unactivated copy is told to activate before any file is tried. App updates are not affected — every copy still updates itself, and the restore scripts built into the app still work offline.
+
 ## v3.10.0.1-1.1.7 (2026-10-06)
 
 ### Changed
