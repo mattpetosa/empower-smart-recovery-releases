@@ -8,16 +8,6 @@ Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empo
 - **The ring on the running step turns.** Since 1.3.0 it stood still on many computers while a step ran. It now turns once a second for as long as the step runs.
 - **The window stays responsive while a step runs.** Each step does its work in the background, so the window can be moved and Cancel answers straight away while a step is busy.
 
-## v3.10.0.1-1.3.2 (2026-10-08)
-
-### Fixed
-- **The running step's ring turns smoothly, and the window stays responsive.** Each step now does its work in the background, so the ring keeps turning while the step runs — before, it froze or jumped while a step was busy — and the window can still be moved or cancelled.
-
-## v3.10.0.1-1.3.1 (2026-10-08)
-
-### Fixed
-- **The running step's ring spins again.** On computers where Windows' window animations are turned off — Remote Desktop sessions and servers set for best performance — the ring on the running step stood still. It now always turns while a step is running.
-
 ## v3.10.0.1-1.3.0 (2026-10-08)
 
 ### Changed
@@ -49,4 +39,3 @@ Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empo
 
 ### Changed
 - **Logs go into a folder named for this app:** `C:\Client\Logs\Empower Smart Recovery`, so each Smart Tools app's logs are kept apart. The folder can be read by administrators only (C:\Client is shared on the network). Logs this app wrote straight into `C:\Client\Logs` before are moved there the first time it opens.
-
