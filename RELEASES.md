@@ -2,6 +2,17 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-recovery-releases/releases) page.
 
+## v3.10.0.1-1.3.4 (2026-10-11)
+
+### Fixed
+- **The SYS password is masked in the restore logs left in C:\Client\DRScripts.** Waters' restore script writes it into its own log there, and C:\Client is a shared folder. It is now masked as soon as the restore finishes, and in logs from earlier restores the next time a restore is staged (when the same SYS password is entered).
+- **A license key the licensing server refuses is no longer saved.** It used to replace the previous key and keep working while the computer was offline.
+- **The settings folder in ProgramData is now open to administrators only.** It holds the license key; other users on the computer could read it before.
+- **Downloads no longer re-check every file each time.** The record of files already verified couldn't be read back, so each sync re-checked the whole download folder.
+
+### Removed
+- **Unpacking a Client.zip found next to the app when the server can't be reached.** That came from the old pre-built offline ISO and wasn't signed. The restore scripts this app needs are built into it.
+
 ## v3.10.0.1-1.3.3 (2026-10-08)
 
 ### Fixed
