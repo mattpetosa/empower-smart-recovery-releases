@@ -2,6 +2,34 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-recovery-releases/releases) page.
 
+## v3.10.0.1-1.4.4 (2026-10-13)
+
+### Changed
+- **Built on the shared Smart Tools engine, the same one Empower Smart Deploy uses.** Steps, prompts, activation, updates and run logs now work the same way in both apps.
+- **Prompts no longer replace each other.** A second prompt opens on top of the first, and the first one comes back once the second is answered.
+- **Cancelling a prompt ends the run as cancelled, and the step says why.** If you cancel "Start restore?", the backup choice or activation, that step shows "Skipped" with the reason (for example "Cancelled before the restore started"), the steps after it show "Not run — cancelled", and the run log records the run as cancelled. A network timeout inside a step now fails that step instead of ending the run as if you had cancelled.
+- **Activation.** The activation prompt links to the license page ("Open the license page"); request a key there and choose Recovery. An expired key, a key activated on another computer and a clock problem each get their own explanation, and a key for another Smart Tools app is now explained as such when it doesn't validate.
+- **Check for updates keeps checking even when the license can't be confirmed.** The check for a newer version still runs, and you can enter a new key at the end. Its steps are now Activation server, Check for a newer version, Download and Ready.
+- **The "update ready" prompt waits until a running task finishes.** It no longer interrupts a run; the Relaunch button at the top offers the update afterwards.
+- **Updates are applied by a safer swap.** The new version is renamed into place, and the previous one is put back if that fails. Updates are no longer downloaded into C:\Client\Updates.
+- **Roll back:** if a build can't be downloaded or verified, one short message says so.
+- **Shorter recovery cards.** Disaster Recovery & Testing and Data Corruption Recovery keep only the key points, so both fit on the home screen without scrolling.
+- **The window fits small screens,** such as 1024×768 Remote Desktop sessions. After an update relaunch it is restored and brought to the front.
+- **Pressing Start rebuilds the checklist first,** so it reflects the computer as it is at that moment (it used to be prepared only once, when the list was empty).
+- **The step list follows the running step.** Scroll up and it stays where you are; it follows again when you scroll back to the bottom or the next step starts.
+- **Run logs:** small wording changes in the header lines.
+
+### Added
+- **Unexpected errors are written to a crash log:** `C:\Client\Logs\Empower Smart Recovery\ESR_crash_<time>.log`.
+
+### Fixed
+- **Database checks no longer write the SYS password to a temporary file.** It is handed straight to SQL*Plus instead.
+- **A disaster recovery stops with a clear message when the Fast Recovery Area or archive log location can't be read back from the database** (the database query failed, or part of the path matches the SYS password), **or when one of those folders can't be listed.** Waters requires those folders to be checked before a disaster recovery, so the restore no longer goes ahead without that check. A data corruption recovery warns instead when the Fast Recovery Area can't be read back.
+- **A database check now always reports a failure when Oracle refuses the SYS login.**
+- **A settings file that can't be read is kept aside instead of being overwritten,** and settings are saved in one step, so an interrupted save can't leave a half-written file.
+- **Activating from the top of the window no longer saves a key the licensing server refuses.** (1.3.4 fixed this for the Update & Download license step only.)
+- **Single-button notices show one OK button,** instead of two OK buttons side by side.
+
 ## v3.10.0.1-1.3.4 (2026-10-11)
 
 ### Fixed
