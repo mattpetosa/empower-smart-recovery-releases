@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-recovery-releases/releases) page.
 
+## v3.10.0.1-1.4.5 (2026-10-14)
+
+### Changed
+- **The header's license chip just says "Licensed".** The full text (who it's licensed to and when it expires) was long enough to crowd the header's other buttons. Click **Licensed** to see who the license is for, when it expires, its license ID and when this computer last checked in, with a button to enter a different key.
+
 ## v3.10.0.1-1.4.4 (2026-10-13)
 
 ### Changed
