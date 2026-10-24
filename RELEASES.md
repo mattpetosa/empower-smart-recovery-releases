@@ -2,6 +2,29 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-recovery-releases/releases) page.
 
+## v3.10.0.1-1.5.0 (2026-10-23)
+
+### Changed
+- **License keys now name their app.** New keys from the license page start with ESR-, are shorter, and use only capital letters and digits in groups of five; when you enter one, case, spaces, line breaks and dashes don't matter. Keys issued before keep working, and a computer that is already activated needs nothing new.
+- **A refused license key says why:** a character looks mistyped, the key is for another Smart Tools app (the message names it), or the text isn't a license key at all.
+- **A license no longer carries over to a cloned or copied server; a copy must be activated online once.** Replacing a server's motherboard, or a virtual machine that gets a new hardware ID when it is imported or restored, also counts as a move. Activating online once covers it.
+- **Update & Download checks the license exactly the way Activate at the top of the window does,** with the same messages.
+- **A restore script that isn't the known Waters version must be accepted before it runs.** If Restore_Full_DatabaseEmp.bat or rebuildInvalidIndx.sql differs from the official Empower 3.8.0–3.10.0 files, the restore stops and shows both checksums; choose Run it anyway or Cancel restore. Report on GitHub opens a pre-filled report (file names, checksums and app version only), and GitHub page opens the list of reports.
+
+### Fixed
+- **A license key pasted from an email where it wraps onto a second line is no longer cut off** at the line break.
+- **The SYS password is masked in the restore's files whatever the outcome.** When a restore failed or was cancelled, the copy of Waters' restore log in C:\Client\Logs\Empower Smart Recovery was not made, and the password was not masked in the files left in C:\Client\DRScripts until a later restore. Both now happen as soon as the script stops, and the masking also covers the other text files the script leaves in the run folder.
+- **The SYS password is masked in Waters' restore logs while the restore runs,** within about half a second of being written, rather than only once the restore has finished. The logs in C:\Client\DRScripts no longer hold it readable for the length of the restore.
+- **C:\Client\DRScripts, where the recovery scripts are kept, is open to administrators only,** so no other account can put a false script there before a recovery. A script in it owned by an account that isn't an administrator is not run, and the message says how to fix it. If the folder can't be locked, you are asked whether to continue. Anything else found in the folder is listed as a warning. A backup can no longer be restored from inside that folder.
+- **Each restore runs from a new folder that only administrators can open.** Waters' restore script runs files from its folder in C:\Client\DRScripts and writes its logs there, and other accounts could read or add files in it. A folder that already exists is never reused.
+- **A SYS password containing { or } is masked everywhere.** Waters' script passes it to RMAN in an altered form, which wasn't recognised when an error message repeated it.
+- **Cancel run asks before stopping a running restore.** Stopping Waters' script part-way leaves the database unusable until the restore is run again; one click no longer does that.
+- **Closing the window while a task runs asks first.** Closing used to leave a running restore going in the background, with nobody checking its result.
+- **A backup on a mapped network drive is refused before anything is changed.** The Oracle service can't see drive letters mapped in your session, so the restore failed part-way, after the database had been shut down. Copy the backup to a local disk, or choose it by its `\\server\share` path. A control file at the root of a drive is refused too: put the backup set in a folder.
+- **A SYS password with a tab or another invisible character is refused up front,** like one with a space.
+- **Update & Download carries on when a file in C:\Client can't be read;** that file is downloaded again instead of stopping the sync.
+- **Check System's disk space check reports a drive that can't be read** instead of failing.
+
 ## v3.10.0.1-1.4.5 (2026-10-14)
 
 ### Changed
