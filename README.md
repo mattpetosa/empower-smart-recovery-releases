@@ -2,7 +2,7 @@
 
 # Empower Smart Recovery — Downloads
 
-This repository hosts **downloads and issue tracking** for Empower Smart Recovery, the
+This repository hosts **downloads** for Empower Smart Recovery, the
 recovery companion to [Empower Smart Deploy](https://github.com/mattpetosa/empower-smart-deploy-releases):
 a guided Windows app that restores a corrupted Waters **Empower 3** database — or proves
 your disaster-recovery plan by restoring backups onto a test server — using Waters' own
@@ -37,5 +37,5 @@ documented restore procedure from the Empower 3.8.0–3.10.0 media.
 
 ## Issues
 
-Found a problem? [Open an issue](https://github.com/mattpetosa/empower-smart-recovery-releases/issues).
+Found a problem or have a request? Every Smart Tools app shares one place for feedback: [open an issue in Smart Tools Feedback](https://github.com/mattpetosa/smart-tools-feedback/issues/new/choose).
 Source code is maintained in a private repository.
